@@ -1,0 +1,116 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar{
+    
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 16%;
+}
+
+.content{
+    width: -webkit-fill-available;
+}
+
+a.active{
+    --tw-text-opacity: 1;
+    color: rgba(229,231,235,var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgba(55,65,81,var(--tw-bg-opacity));
+}
+
+a.active:hover{
+
+}
+
+.menu-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    background: #1a253c;
+    color: #9ca3af;
+    font-weight: bold;
+}
+
+.menu-header .menu-item{
+    padding: 20px 0px;
+    text-align: center;
+    width: -webkit-fill-available;
+}
+
+.menu-header .menu-item.active{
+    background: white;
+    color: black;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.menu-header .menu-item:hover{
+    background-color: #263656;
+}
+
+.menu-header .menu-item.active:hover{
+    background: white;
+}
+
+.search-block{
+    width: 30%;
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    
+}
+
+
+.search-block .icon{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #111827;
+    border-radius: 7px 0px 0px 7px;
+}
+
+.search-block input{
+    padding-left: 20px;
+    border: 1px solid #111827;
+    outline: none;
+    border-radius: 0px 7px 7px 0px;
+}
+
+.crud-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.delete-form, .edit-form{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+button.delete-button{
+    width: 30px;
+    height: 30px;
+    background-image: url("/static/img/trash.svg");
+    background-size: contain;
+    background-position: center;
+}
+
+
+button.edit-button{
+    width: 30px;
+    height: 30px;
+    background-image: url("/static/img/edit.svg");
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}

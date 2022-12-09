@@ -1,0 +1,9 @@
+flask
+pydantic
+fastapi
+bson
+pymongo[srv]
+Flask-PyMongo
+python-dotenv
+flask-cors
+flask-assets

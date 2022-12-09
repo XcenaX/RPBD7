@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename= 'js/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+    
+    <script src="{{ url_for('static', filename= 'bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/alertify.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/index.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/alertify/alertify.min.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/tailwind.min.css') }}">
+    <!-- <link href="{{ url_for('static', filename= 'css/all.css') }}" rel="stylesheet" type="text/css" /> -->
+    <script src="{{ url_for('static', filename= 'js/table.js') }}"></script>
+    
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/table2.css') }}">
+    
+
+    <style>
+        .content{
+            padding: 0;
+        }
+    </style> 
+</head>
+<body>    
+    <div class="main">
+        <div class="sidebar">
+            <div class="flex flex-col items-center h-full overflow-hidden text-gray-400 bg-gray-900 rounded" style="width: 100%;">
+                <a class="flex items-center w-full px-3 mt-3" href="{{ url_for('index')}}">
+                    <svg class="w-8 h-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+                    </svg>
+                    <span class="ml-2 text-sm font-bold">Lab6</span>
+                </a>
+                <div class="w-full px-2">
+                    <div class="flex flex-col items-center w-full mt-3 border-t border-gray-700">
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
+                            <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Главная</span>
+                        </a>
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
+                            <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Search</span>
+                        </a>
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
+                            <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Insights</span>
+                        </a>
+                        <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300" href="#">
+                            <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                            </svg>
+                            <span class="ml-2 text-sm font-medium">Docs</span>
+                        </a>
+                    </div>
+                    <form action="" method="POST" class="flex flex-col items-center w-full mt-2 border-t border-gray-700" style="cursor: pointer;">
+                        <button type="submit" style="width: 100%;">
+                            <a class="flex items-center w-full h-12 px-3 mt-2 rounded hover:bg-gray-700 hover:text-gray-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9"/></svg>
+                                <span class="ml-2 text-sm font-medium">Выйти (Выйди розбийник)</span>
+                            </a>                        
+                        </button>
+                    </form>
+                    
+                </div>
+                
+                <a class="flex items-center justify-center w-full h-16 mt-auto bg-gray-800 hover:bg-gray-700 hover:text-gray-300" href="#">
+                    <svg class="w-6 h-6 stroke-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="ml-2 text-sm font-medium">VladLeb</span>
+                </a>
+            </div>
+        </div>
+        <div class="content">            
+            {% if messages %}
+                {% for message in messages %}
+                    <script>
+                        alertify.success("{{message}}");
+                    </script>
+                {% endfor %}
+            {%endif%}
+            <form method="POST" action="{{url_for('add_student')}}" class="modal fade" id="addFormstudents" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <input type="hidden" name="menu_item" value="{{menu_item}}">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{menu_item}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            {%for field in fields_for_create%}                        
+                                <label for="{{field}}" style="margin-top: 10px;">{{field}}</label>    
+                                <input type="text" name="{{field}}" id="{{field}}" class="form-control">                        
+                            {%endfor%}
+                            
+                            <label for="groupsadd"  style="margin-top: 10px;">Группа</label>    
+                            <select id="groupadds" name="group" class="form-control">
+                                {%for group in groups%}
+                                    <option value="{{group._id}}">{{group.name}}</option>
+                                {%endfor%}
+                            </select>                            
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form method="POST" action="{{url_for('add_group')}}" class="modal fade" id="addFormgroups" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <input type="hidden" name="menu_item" value="{{menu_item}}">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">{{menu_item}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            {%for field in fields_for_create%}                        
+                                <label for="{{field}}" style="margin-top: 10px;">{{field}}</label>    
+                                <input type="text" name="{{field}}" id="{{field}}" class="form-control">                        
+                            {%endfor%}                                        
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <form method="POST" action="{{url_for('update_student')}}" class="modal fade" id="editFormstudents" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <input type="hidden" name="menu_item" value="{{menu_item}}">
+                <input type="hidden" name="id" id="object_id" value="">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Редактирование</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            {%for field in fields_for_create%}                        
+                                <label for="{{field}}" style="margin-top: 10px;">{{field}}</label>    
+                                <input type="text" name="{{field}}" id="{{field}}" class="form-control">                        
+                            {%endfor%}
+                            
+                            <label for="groupsedit"  style="margin-top: 10px;">Группа</label>    
+                            <select id="groupsedit" name="group" class="form-control">
+                                {%for group in groups%}
+                                    <option value="{{group._id}}">{{group.name}}</option>
+                                {%endfor%}
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </form>            
+
+            <form method="POST" action="{{url_for('update_group')}}" class="modal fade" id="editFormgroups" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">                
+                <input type="hidden" name="menu_item" value="{{menu_item}}">
+                <input type="hidden" name="id" id="object_id" value="">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Редактирование</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            {%for field in fields_for_create%}                        
+                                <label for="{{field}}" style="margin-top: 10px;">{{field}}</label>    
+                                <input type="text" name="{{field}}" id="{{field}}" class="form-control">                        
+                            {%endfor%}                                        
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+            
+
+            <div class="menu-header">                
+                <a href="{{url_for('index')}}?menu_item=students" class='menu-item {% if menu_item == "students"%}active{%endif%}'>Студенты</a>            
+                <a href="{{url_for('groups_page')}}?menu_item=groups" class='menu-item {% if menu_item == "groups"%}active{%endif%}'>Группы</a>                                                
+            </div>
+            <div class="container">
+                <div class="crud-header">
+                    <form class="search-block" method="GET" action="">
+                        <button type="submit" class="icon">
+                            <svg style="margin: auto;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        </button>
+                        <input type="text" class="search-input" placeholder="Поиск..." value="{{qs}}" name="qs">
+                        <input type="hidden" name="menu_item" value="{{menu_item}}">
+                    </form>
+                    <button type="button" class="btn btn-primary btn-success" data-toggle="modal" data-target="#addForm{{menu_item}}">
+                        Добавить
+                    </button>
+                </div>
+                
+                <div class="table">
+                    <div class="table-header">
+                        {%for field in fields%}
+                            <div class="header__item"><a id="{{field}}" class="filter__link" href="#">{{field}}</a></div>
+                        {%endfor%}
+                        <div style="width: 30px; height: 30px; margin-right:20px"><a class="filter__link" ></a></div>
+                        <div style="width: 30px; height: 30px; margin-right:20px"><a class="filter__link" ></a></div>
+                        <!-- <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Wins</a></div>
+                        <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Draws</a></div>
+                        <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Losses</a></div>
+                        <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Total</a></div> -->
+                    </div>
+                    <div class="table-content">	
+                        {%for row in data%}
+                            <div class="table-row">		
+                                {%for value in row%}
+                                    <div class="table-data">{{value}}</div>
+                                {%endfor%}
+                                <form 
+                                action="{%if menu_item == 'students'%}{{url_for('delete_student')}}{%else%}{{url_for('delete_group')}}{%endif%}" method="POST" class="delete-form">
+                                    <input type="hidden" name="menu_item" value="{{menu_item}}">
+                                    <input type="hidden" name="id" value="{{row.0}}">
+                                    <button type="submit" class="delete-button"></button>
+                                </form>
+                                <button type="button" class="edit-button" id="edit_object_{{row.0}}" data-toggle="modal" data-target="#editForm{{menu_item}}"  onclick="changeEditForm(this, '{{menu_item}}');"></button>
+                            </div>
+                        {%endfor%}
+                    </div>	
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
