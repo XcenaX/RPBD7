@@ -10,7 +10,7 @@
     MONGO_URI="mongodb+srv://LOGIN:PASSWORD@CLUSTER_NAME.5efz1ar.mongodb.net/?retryWrites=true&w=majority&ssl=true&ssl_cert_reqs=CERT_NONE"
 ```
 
-# В командной строке
+В командной строке
 
 ```cmd
     flask --app start --debug run
