@@ -76,7 +76,10 @@ def index():
         #group_name = None if not item["group"] else item["group"]["$id"]  
         print(item)      
         group_id  = item["group"].id        
-        group_name = groups.find_one({"_id": ObjectId(group_id)})["name"]
+        group = groups.find_one({"_id": ObjectId(group_id)})
+        group_name = ""
+        if(group):
+            group_name = group["name"]
         data.append([item["_id"], item["age"], item["fullname"], group_name])
 
     for group in groups.find():
@@ -240,6 +243,8 @@ def update_group():
 @app.route("/groups/delete", methods=["DELETE", "POST"])
 def delete_group():
     _id = request.form['id']
+
+    students.delete_many({"group.$id": ObjectId(_id)})
 
     deleted_group = groups.find_one_and_delete(
         {"_id": ObjectId(_id)},
